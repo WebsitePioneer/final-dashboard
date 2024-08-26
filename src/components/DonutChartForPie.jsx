@@ -2,7 +2,7 @@ import React from 'react'
 import Chart from "react-apexcharts";
 import { usePieBarChartData } from "../hooks/usePieBarChartData";
 
-const DonutChartForPie = () => {  
+const DonutChartForPie = ({dark}) => {  
   const { data, isLoading, pieerror } = usePieBarChartData();
   if (isLoading) return <div>Loading...</div>;
   if (pieerror) return <div>Error: {error.message}</div>;
@@ -14,33 +14,42 @@ const DonutChartForPie = () => {
     options: {
       chart: {
         type: "donut",
-        width: "100%",
+        background: 'transparent', // Background color of the entire chart
+        foreColor: '#ffffff', // Default color for all text in the chart (like axis labels)
       },
       dataLabels: {
-        enabled: false,
+        enabled: true,
+        style:{
+          color: `${dark ? "#ffffff" : "#000000"}`,
+        }
       },
       plotOptions: {
         pie: {
           customScale: 1,
           donut: {
-            size: "60%",
+            size: "50%",
           },
-          offsetY: 10,
+          offsetY: 0,
         },
         stroke: {
-          colors: undefined,
+          color: `${dark ? "#ffffff" : "#000000"}`,
         },
       },
       title: {
-        text: "Tasks Status",
+        text: "Tasks Status in %",
         align: "left",
         margin: 40,
         offsetY: 0,
         style: {
           fontSize: "24px",
+          fontWeight: 'bold',
+          color: `${dark ? "#ffffff" : "#000000"}`,
         },
       },
       labels: labels,
+      style:{
+        color: `${dark ? "#ffffff" : "#000000"}`,
+      },
       legend: {
         position: "right",
         offsetY: 70,

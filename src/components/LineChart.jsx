@@ -2,7 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 import { useLineChartData } from "../hooks/useLineChartData";
 
-const LineChartForLine = () => {
+const LineChartForLine = ({dark}) => {
   const { data, isLoading, error } = useLineChartData();
 
   if (isLoading) return <div>Loading...</div>;
@@ -15,6 +15,8 @@ const LineChartForLine = () => {
     options: {
       chart: {
         type: "line",
+        background: 'transparent', // Gradient background
+        foreColor: `${dark ? "#ffffff" : "#000000"}`,
         toolbar: {
           show: true,
           tools: {
@@ -26,6 +28,31 @@ const LineChartForLine = () => {
             pan: false,
             reset: false,
           },
+        },
+      },
+      dataLabels: {
+        enabled: true,
+        style: {
+          fontSize: '10px',
+          fontFamily: 'Helvetica, Arial, sans-serif',
+          fontWeight: 'bold',
+          colors: ['#FEB019'], // Set data label color
+        },
+        background: {
+          enabled: true,
+          foreColor: '#ffffff', // Text color inside the background
+          padding: 8,
+          borderRadius: 50,
+          borderWidth: 0,
+          opacity: 0.9,
+        },
+        dropShadow: {
+          enabled: true,
+          top: -8,
+          left: -4,
+          blur: 3,
+          color: '#000',
+          opacity: 0.55,
         },
       },
       forecastDataPoints: {
@@ -52,7 +79,7 @@ const LineChartForLine = () => {
         offsetY: 0,
         style: {
           fontSize: "25px",
-          color: "#373D3F",
+          color: `${dark ? "#ffffff" : "#000000"}`,
         },
       },
       fill: {

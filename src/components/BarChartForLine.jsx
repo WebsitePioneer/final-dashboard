@@ -1,7 +1,9 @@
 import React from "react";
 import Chart from "react-apexcharts";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const BarChartForLine = () => {
+const BarChartForLine = ({dark}) => {
 
   // Defining month names in order from May to September
   const months = ["May", "June", "July", "August", "September"];
@@ -11,30 +13,40 @@ const BarChartForLine = () => {
     options: {
       chart: {
         type: "bar",
-        height: 300,
+        background: 'transparent', // Gradient background
+        foreColor: `${dark ? "#ffffff" : "#000000"}`,
       },
+      colors: ['#845ec2', '#926c00', '#845ec2', '#EDDD3F', '#926c00'],
       plotOptions: {
         bar: {
+          distributed: true,
           borderRadius: 4,
           borderRadiusApplication: "end",
           horizontal: true,
         },
       },
       dataLabels: {
-        enabled: false,
-      },
-      theme: {
-        mode: 'light', 
-        palette: 'palette3', 
-        monochrome: {
-            enabled: true,
-            color: '#FF4560',
-            shadeTo: 'light',
-            shadeIntensity: 0.65
-        },
+        enabled: true,
+        style:{
+          color: `${dark ? "#ffffff" : "#000000"}`,
+        }
       },
       xaxis: {
         categories: months,
+        labels: {
+          style: {
+            colors: `${dark ? "#ffffff" : "#000000"}`, // Color of x-axis labels
+            fontSize: '14px',
+          },
+        },
+      },
+      yaxis: {
+        labels: {
+          style: {
+            colors: `${dark ? "#ffffff" : "#000000"}`, // Color of y-axis labels
+            fontSize: '13px',
+          },
+        },
       },
       title: {
         text: "Posts Per Month",
@@ -43,6 +55,7 @@ const BarChartForLine = () => {
         offsetY: 0,
         style: {
           fontSize: "25px",
+          color: `${dark ? "#ffffff" : "#000000"}`,
         },
       },
     },
@@ -55,7 +68,7 @@ const BarChartForLine = () => {
   ];
   return (
     <>
-      <Chart options={chartOptions.options} series={chartSeries} type="bar" height="300" />
+      <Chart data-aos="fade-up" options={chartOptions.options} series={chartSeries} type="bar" height="300" />
     </>
   );
 };

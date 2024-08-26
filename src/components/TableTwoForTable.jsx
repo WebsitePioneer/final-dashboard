@@ -90,48 +90,48 @@ const TableTwoForTable = () => {
         <div className='custom-scroll h-[320px] max-sm:w-[300px] overflow-y-scroll pr-3'>
         <table className='border-separate border w-full '>
             <tbody className=''>
-                <tr className='w-full bg-[#db3750] text-white'>
-                    <td colSpan={2} className='text-[16px] font-[500] py-2 px-4'>Total Feedbacks</td>
-                    <td className='text-[16px] font-[500]  px-4'>{totalFeedbacks}</td>
+                <tr className='w-full bg-[#797979] text-black'>
+                    <td colSpan={2} className='text-[16px] font-[550] py-2 px-4'>Total Feedbacks</td>
+                    <td className='text-[16px] font-[550]  px-4'>{totalFeedbacks}</td>
                 </tr> 
 
-                <tr className='bg-[#af273b] text-white'>
-                    <td colSpan={2} className='text-[16px] font-[500] py-2 px-4'>Time Interval (Days)</td>
-                    <td className='text-[16px] font-[500] px-4'>{totalDates}</td>
+                <tr className='bg-[#d3d2d2] text-black'>
+                    <td colSpan={2} className='text-[16px] font-[550] py-2 px-4'>Time Interval (Days)</td>
+                    <td className='text-[16px] font-[550] px-4'>{totalDates}</td>
                 </tr>  
 
-                <tr className='bg-[#db3750] text-white'>
-                <td colSpan={2} className='text-[16px] font-[500] py-2 px-4'>Bucket ID Types</td>
-                <td className='text-[16px] font-[500] px-4'>{bucketIDTypes}</td>
+                <tr className='bg-[#797979] text-black'>
+                <td colSpan={2} className='text-[16px] font-[550] py-2 px-4'>Bucket ID Types</td>
+                <td className='text-[16px] font-[550] px-4'>{bucketIDTypes}</td>
                 </tr>  
 
-                <tr className='bg-[#af273b] text-white'>
-                    <td colSpan={2} className='text-[16px] font-[500] py-2 px-4'>Total Up-Votes</td>
-                    <td className=' text-[16px] font-[500] px-4'>{sum}</td>
+                <tr className='bg-[#d3d2d2] text-black'>
+                    <td colSpan={2} className='text-[16px] font-[550] py-2 px-4'>Total Up-Votes</td>
+                    <td className=' text-[16px] font-[550] px-4'>{sum}</td>
                 </tr>  
                 
                 <tr>
-                    <td colSpan={3} className='bg-[#db3750] text-white text-center text-[18px] font-[600] p-2 px-4 '>feedback Status</td>
+                    <td colSpan={3} className='bg-[#797979] text-black text-center text-[18px] font-[600] p-2 px-4 '>feedback Status</td>
                 </tr> 
 
-                <tr className='bg-[#af273b] text-white'>
-                <td colSpan={2} className='text-[16px] font-[500] py-2 px-4'>In Progress</td>
-                <td className='text-[16px] font-[500] px-4'>{filteredInProgress}</td>
+                <tr className='bg-[#d3d2d2] text-black'>
+                <td colSpan={2} className='text-[16px] font-[550] py-2 px-4'>In Progress</td>
+                <td className='text-[16px] font-[550] px-4'>{filteredInProgress}</td>
                 </tr>
 
-                <tr className='bg-[#af273b] text-white'>
-                    <td colSpan={2} className='text-[16px] font-[500] py-2 px-4'>In Review</td>
-                    <td className='text-[16px] font-[500] px-4'>{filteredInReview}</td>
+                <tr className='bg-[#d3d2d2] text-black'>
+                    <td colSpan={2} className='text-[16px] font-[550] py-2 px-4'>In Review</td>
+                    <td className='text-[16px] font-[550] px-4'>{filteredInReview}</td>
                 </tr>  
 
                 <tr>
-                    <td colSpan={3} className='bg-[#db3750] text-white text-center text-[18px] font-[600] p-2 px-4 '>Feedbacks with High Votes</td>
+                    <td colSpan={3} className='bg-[#797979] text-black text-center text-[18px] font-[600] p-2 px-4 '>Feedbacks with High Votes</td>
                 </tr> 
 
                 {sortedvoteTitle.map((title,ind) => {
                     return <tr key={ind}>
-                    <td colSpan={2} className='bg-[#af273b] text-white text-[16px] font-[500] py-[5px] px-4'>{title[0][0]}</td>
-                    <td className='bg-[#af273b] text-white text-[16px] font-[500] px-4'>{title[0][1]}</td>
+                    <td colSpan={2} className='bg-[#d3d2d2] text-black text-[15px] font-[550] py-[5px] px-4'>{title[0][0]}</td>
+                    <td className='bg-[#d3d2d2] text-black text-[15px] font-[550] px-4'>{title[0][1]}</td>
                 </tr>
                 })}
                 

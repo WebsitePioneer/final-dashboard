@@ -2,7 +2,7 @@ import React from 'react'
 import Chart from "react-apexcharts";
 import {useTableChartData} from "../hooks/useTableChartData"
 
-const PieChartForTable = () => {
+const PieChartForTable = ({dark}) => {
   const { data, isLoading, error } = useTableChartData();
 
   if (isLoading) return <div>Loading...</div>;
@@ -55,10 +55,14 @@ const PieChartForTable = () => {
         options: {
             chart: {
                 type: "donut",
-                width: "100%",
+                background: 'transparent', // Background color of the entire chart
+                foreColor: '#ffffff', // Default color for all text in the chart (like axis labels)
               },
               dataLabels: {
-                enabled: false,
+                enabled: true,
+                formatter: function (val) {
+                  return val.toFixed(1) + '%'; // Format labels as percentage
+                },
               },
               plotOptions: {
                 pie: {
@@ -79,6 +83,7 @@ const PieChartForTable = () => {
                 offsetY: 0,
                 style: {
                   fontSize: "24px",
+                  color: `${dark ? "#ffffff" : "#000000"}`,
                 },
               },
           labels: datesFilter,
@@ -91,7 +96,7 @@ const PieChartForTable = () => {
     
     const chartSeries = tasksFiltered;
   return (
-    <Chart options={chartOptions.options} series={chartSeries} type="pie" height={320} />
+    <Chart options={chartOptions.options} series={chartSeries} type="pie" height={300} />
   )
 }
 

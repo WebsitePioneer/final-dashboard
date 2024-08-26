@@ -2,7 +2,7 @@ import React from 'react'
 import Chart from "react-apexcharts";
 import { usePieBarChartData } from "../hooks/usePieBarChartData";
 
-const BarChartForPie = () => {
+const BarChartForPie = ({dark}) => {
     // Pie chart
     const { data, isLoading, pieerror } = usePieBarChartData();
     if (isLoading) return <div>Loading...</div>;
@@ -10,18 +10,18 @@ const BarChartForPie = () => {
 
   const labels = data.labels;
   const value = data.data;
-  const sum = value.reduce((acc, curr) => acc + curr, 0);
-  const pervalue = value.map(val => {
-    return ((val / sum) * 100).toFixed(2);
-  })
 
   const chartOptions = {
     options: {
       chart: {
         type: "bar",
+        background: 'transparent', // Gradient background
+        foreColor: `${dark ? "#ffffff" : "#000000"}`, // Color of text inside the chart (axis labels, data labels, etc.)
       },
+      colors: ['#845ec2', '#926c00', '#00c9a7', '#008b74', '#926c00'],
       plotOptions: {
         bar: {
+          distributed: true,
           borderRadius: 4,
           borderRadiusApplication: "end",
           horizontal: false,
@@ -29,28 +29,36 @@ const BarChartForPie = () => {
         },
       },
       dataLabels: {
-        enabled: false,
+        enabled: true,
+        style:{
+          color: `${dark ? "#ffffff" : "#000000"}`,
+        }
       },
-      theme: {
-              mode: 'light', 
-              palette: 'palette3', 
-              monochrome: {
-                  enabled: true,
-                  color: '#FEB019',
-                  shadeTo: 'light',
-                  shadeIntensity: 0.65
-              },
-            },
       xaxis: {
         categories: labels,
+        labels: {
+          style: {
+            colors: `${dark ? "#ffffff" : "#000000"}`, // Color of x-axis labels
+            fontSize: '14px',
+          },
+        },
+      },
+      yaxis: {
+        labels: {
+          style: {
+            colors: `${dark ? "#ffffff" : "#000000"}`, // Color of y-axis labels
+            fontSize: '13px',
+          },
+        },
       },
       title: {
-        text: "Tasks Status in %",
+        text: "Tasks Status",
         align: "left",
         margin: 40,
         offsetY: 0,
         style: {
           fontSize: "25px",
+          color: `${dark ? "#ffffff" : "#000000"}`,
         },
       },
     },
@@ -58,7 +66,7 @@ const BarChartForPie = () => {
 
   const chartSeries = [
     {
-      data: pervalue,
+      data: value,
     },
   ];
 
