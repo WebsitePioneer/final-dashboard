@@ -15,7 +15,7 @@ const TableOneForTable = () => {
 
   return (
     <div className="">
-      <div className="custom-scroll h-[320px] max-sm:w-[300px] overflow-y-scroll overflow-x-hidden pr-3">
+      <div className="custom-scroll h-[320px] w-full overflow-y-scroll overflow-x-hidden pr-3">
         <table className="border-separate w-full  ">
           <thead>
             <tr className="bg-[#000000] text-white">

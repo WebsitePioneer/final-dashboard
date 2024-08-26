@@ -30,7 +30,7 @@ const BarChartForPie = ({ dark }) => {
       colors: ["#E97224", "#9A6F2A", "#DDB64F", "#616A1E", "#926c00"],
       plotOptions: {
         bar: {
-          distributed: true,
+          distributed: false,
           borderRadius: 4,
           borderRadiusApplication: "end",
           horizontal: false,

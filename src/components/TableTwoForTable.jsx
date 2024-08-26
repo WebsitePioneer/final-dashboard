@@ -97,7 +97,7 @@ const TableTwoForTable = () => {
 
   return (
     <div className="">
-      <div className="custom-scroll h-[320px] max-sm:w-[300px] overflow-y-scroll pr-3">
+      <div className="custom-scroll h-[320px] w-full overflow-y-scroll pr-3">
         <table className="border-separate w-full ">
           <tbody className="">
             <tr className="w-full bg-[#797979] text-black">

@@ -119,7 +119,7 @@ const PieChartForTable = ({ dark }) => {
     options={chartOptions.options}
     series={chartSeries}
     type="pie"
-    height={400}
+    height={600}
   /></div>
   </>
     

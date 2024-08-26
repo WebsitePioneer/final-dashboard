@@ -75,7 +75,7 @@ const DonutChartForPie = ({ dark }) => {
           options={chartOptions.options}
           series={chartSeries}
           type="donut"
-          height={400}
+          height={600}
         />
       </div>
     </div>
