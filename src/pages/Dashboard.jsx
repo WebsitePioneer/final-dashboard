@@ -27,7 +27,7 @@ const Dashboard = ({ data }) => {
       data-aos="fade-up"
       className={`sm:w-11/12 w-full mx-auto bg-gradient-to-r ${
         data ? "from-[#161616] to-[#282828]" : "from-[#d1c8c8] to-[#dcb7a0]"
-      } drop-shadow-xl scroll-smooth my-8 max-sm:my-6 px-6 py-6 rounded-[25px]`}
+      } drop-shadow-xl scroll-smooth my-8 max-sm:my-6 px-6 max-sm:px-3 py-6 rounded-[25px]`}
     >
       <div
         data-aos="fade-up"

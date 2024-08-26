@@ -14,7 +14,7 @@ function App() {
     <div
       className={`${
         darkmode ? "bg-[#0c0c0c]" : "bg-white"
-      }  scroll-smooth pb-[60px] px-4 max-sm:px-5`}
+      }  scroll-smooth pb-[60px] px-4 max-sm:px-2`}
     >
       <div className="flex items-center justify-between px-6 pt-[15px] max-lg:py-[10px] ">
         <img
