@@ -70,7 +70,7 @@ const DonutChartForPie = ({ dark }) => {
         />
       </div>
 
-      <div className="max-sm:lg:block hidden">
+      <div className="max-lg:block hidden">
         <Chart
           options={chartOptions.options}
           series={chartSeries}

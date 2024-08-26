@@ -115,7 +115,7 @@ const PieChartForTable = ({ dark }) => {
     type="pie"
     height={300}
   /></div>
-    <div className="max-sm:lg:block hidden"><Chart
+    <div className="max-lg:block hidden"><Chart
     options={chartOptions.options}
     series={chartSeries}
     type="pie"
