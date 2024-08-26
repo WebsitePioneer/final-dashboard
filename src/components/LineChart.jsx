@@ -2,7 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 import { useLineChartData } from "../hooks/useLineChartData";
 
-const LineChartForLine = ({dark}) => {
+const LineChartForLine = ({ dark }) => {
   const { data, isLoading, error } = useLineChartData();
 
   if (isLoading) return <div>Loading...</div>;
@@ -15,7 +15,7 @@ const LineChartForLine = ({dark}) => {
     options: {
       chart: {
         type: "line",
-        background: 'transparent', // Gradient background
+        background: "transparent", // Gradient background
         foreColor: `${dark ? "#ffffff" : "#ffffff"}`,
         toolbar: {
           show: true,
@@ -33,14 +33,14 @@ const LineChartForLine = ({dark}) => {
       dataLabels: {
         enabled: true,
         style: {
-          fontSize: '10px',
-          fontFamily: 'Helvetica, Arial, sans-serif',
-          fontWeight: 'bold',
-          colors: ['#3B4949'], // Set data label color
+          fontSize: "10px",
+          fontFamily: "Helvetica, Arial, sans-serif",
+          fontWeight: "bold",
+          colors: ["#3B4949"], // Set data label color
         },
         background: {
           enabled: true,
-          foreColor: '#ffffff', // Text color inside the background
+          foreColor: "#ffffff", // Text color inside the background
           padding: 8,
           borderRadius: 50,
           borderWidth: 0,
@@ -51,7 +51,7 @@ const LineChartForLine = ({dark}) => {
           top: -8,
           left: -4,
           blur: 3,
-          color: '#000',
+          color: "#000",
           opacity: 0.55,
         },
       },
@@ -86,7 +86,7 @@ const LineChartForLine = ({dark}) => {
         type: "gradient",
         gradient: {
           shade: "dark",
-          gradientToColors: ["#b91c1c","#EC4899","#581c87"],
+          gradientToColors: ["#b91c1c", "#EC4899", "#581c87"],
           shadeIntensity: 1,
           type: "horizontal",
           opacityFrom: 1,
@@ -106,7 +106,12 @@ const LineChartForLine = ({dark}) => {
 
   return (
     <>
-      <Chart options={chartOptions.options} series={chartSeries} type="line" height="300" />
+      <Chart
+        options={chartOptions.options}
+        series={chartSeries}
+        type="line"
+        height="300"
+      />
     </>
   );
 };

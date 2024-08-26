@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import Chart from "react-apexcharts";
 import { usePieBarChartData } from "../hooks/usePieBarChartData";
 
-const DonutChartForPie = ({dark}) => {  
+const DonutChartForPie = ({ dark }) => {
   const { data, isLoading, pieerror } = usePieBarChartData();
   if (isLoading) return <div>Loading...</div>;
   if (pieerror) return <div>Error: {error.message}</div>;
@@ -14,14 +14,14 @@ const DonutChartForPie = ({dark}) => {
     options: {
       chart: {
         type: "donut",
-        background: 'transparent', // Background color of the entire chart
+        background: "transparent", // Background color of the entire chart
         foreColor: `${dark ? "#ffffff" : "#ffffff"}`, // Default color for all text in the chart (like axis labels)
       },
       dataLabels: {
         enabled: true,
-        style:{
+        style: {
           color: `${dark ? "#ffffff" : "#ffffff"}`,
-        }
+        },
       },
       plotOptions: {
         pie: {
@@ -42,12 +42,12 @@ const DonutChartForPie = ({dark}) => {
         offsetY: 0,
         style: {
           fontSize: "24px",
-          fontWeight: '800',
+          fontWeight: "800",
           color: `${dark ? "#ffffff" : "#ffffff"}`,
         },
       },
       labels: labels,
-      style:{
+      style: {
         color: `${dark ? "#ffffff" : "#ffffff"}`,
       },
       legend: {
@@ -61,15 +61,25 @@ const DonutChartForPie = ({dark}) => {
 
   return (
     <div>
-      <div className='lg:block hidden'>
-        <Chart  options={chartOptions.options} series={chartSeries} type="donut" height={300} />
+      <div className="lg:block hidden">
+        <Chart
+          options={chartOptions.options}
+          series={chartSeries}
+          type="donut"
+          height={300}
+        />
       </div>
 
-      <div className='max-lg:block hidden'>
-        <Chart  options={chartOptions.options} series={chartSeries} type="donut" height={250} />
+      <div className="max-lg:block hidden">
+        <Chart
+          options={chartOptions.options}
+          series={chartSeries}
+          type="donut"
+          height={250}
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DonutChartForPie
+export default DonutChartForPie;

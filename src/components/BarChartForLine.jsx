@@ -1,22 +1,21 @@
 import React from "react";
 import Chart from "react-apexcharts";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-const BarChartForLine = ({dark}) => {
-
+const BarChartForLine = ({ dark }) => {
   // Defining month names in order from May to September
   const months = ["May", "June", "July", "August", "September"];
-  const values = [0, 0, 5, 39,0]
+  const values = [0, 0, 5, 39, 0];
 
   const chartOptions = {
     options: {
       chart: {
         type: "bar",
-        background: 'transparent', // Gradient background
+        background: "transparent", // Gradient background
         foreColor: `${dark ? "#ffffff" : "#ffffff"}`,
       },
-      colors: ['#845ec2', '#926c00', '#845ec2', '#EDDD3F', '#926c00'],
+      colors: ["#845ec2", "#926c00", "#845ec2", "#EDDD3F", "#926c00"],
       plotOptions: {
         bar: {
           distributed: true,
@@ -27,16 +26,16 @@ const BarChartForLine = ({dark}) => {
       },
       dataLabels: {
         enabled: true,
-        style:{
+        style: {
           color: `${dark ? "#ffffff" : "#ffffff"}`,
-        }
+        },
       },
       xaxis: {
         categories: months,
         labels: {
           style: {
             colors: `${dark ? "#ffffff" : "#ffffff"}`, // Color of x-axis labels
-            fontSize: '14px',
+            fontSize: "14px",
           },
         },
       },
@@ -44,7 +43,7 @@ const BarChartForLine = ({dark}) => {
         labels: {
           style: {
             colors: `${dark ? "#ffffff" : "#ffffff"}`, // Color of y-axis labels
-            fontSize: '13px',
+            fontSize: "13px",
           },
         },
       },
@@ -68,7 +67,13 @@ const BarChartForLine = ({dark}) => {
   ];
   return (
     <>
-      <Chart data-aos="fade-up" options={chartOptions.options} series={chartSeries} type="bar" height="300" />
+      <Chart
+        data-aos="fade-up"
+        options={chartOptions.options}
+        series={chartSeries}
+        type="bar"
+        height="300"
+      />
     </>
   );
 };
