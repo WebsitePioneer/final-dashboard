@@ -86,7 +86,7 @@ const Dashboard = ({ data }) => {
           data-aos="fade-up"
           className={`lg:col-span-4 bg-gradient-to-r ${
             data ? "from-[#353535] to-[#525263]" : "from-[#313030] to-[#4d4d56]"
-          } rounded-[15px] px-3 py-3`}
+          } rounded-[15px] px-4 py-4`}
         >
           <TableOneForTable />
         </div>
