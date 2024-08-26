@@ -18,7 +18,16 @@ const BarChartForPie = ({ dark }) => {
         background: "transparent", // Gradient background
         foreColor: `${dark ? "#ffffff" : "#ffffff"}`, // Color of text inside the chart (axis labels, data labels, etc.)
       },
-      colors: ["#E97224", "#3B4A4A", "#DDB64F", "#616A1E", "#926c00"],
+      tooltip: {
+        theme: 'dark', // Controls the overall theme of the tooltip
+        style: {
+          fontSize: '14px', // Sets the font size for tooltip text
+          fontWeight: 'bold', // Sets the font weight for tooltip text
+          background: "#ffffff",
+          colors: "#000000",
+        },
+      },
+      colors: ["#E97224", "#9A6F2A", "#DDB64F", "#616A1E", "#926c00"],
       plotOptions: {
         bar: {
           distributed: true,
