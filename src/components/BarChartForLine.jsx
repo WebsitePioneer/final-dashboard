@@ -14,7 +14,7 @@ const BarChartForLine = ({dark}) => {
       chart: {
         type: "bar",
         background: 'transparent', // Gradient background
-        foreColor: `${dark ? "#ffffff" : "#000000"}`,
+        foreColor: `${dark ? "#ffffff" : "#ffffff"}`,
       },
       colors: ['#845ec2', '#926c00', '#845ec2', '#EDDD3F', '#926c00'],
       plotOptions: {
@@ -28,14 +28,14 @@ const BarChartForLine = ({dark}) => {
       dataLabels: {
         enabled: true,
         style:{
-          color: `${dark ? "#ffffff" : "#000000"}`,
+          color: `${dark ? "#ffffff" : "#ffffff"}`,
         }
       },
       xaxis: {
         categories: months,
         labels: {
           style: {
-            colors: `${dark ? "#ffffff" : "#000000"}`, // Color of x-axis labels
+            colors: `${dark ? "#ffffff" : "#ffffff"}`, // Color of x-axis labels
             fontSize: '14px',
           },
         },
@@ -43,7 +43,7 @@ const BarChartForLine = ({dark}) => {
       yaxis: {
         labels: {
           style: {
-            colors: `${dark ? "#ffffff" : "#000000"}`, // Color of y-axis labels
+            colors: `${dark ? "#ffffff" : "#ffffff"}`, // Color of y-axis labels
             fontSize: '13px',
           },
         },
@@ -55,7 +55,7 @@ const BarChartForLine = ({dark}) => {
         offsetY: 0,
         style: {
           fontSize: "25px",
-          color: `${dark ? "#ffffff" : "#000000"}`,
+          color: `${dark ? "#ffffff" : "#ffffff"}`,
         },
       },
     },

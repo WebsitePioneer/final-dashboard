@@ -88,7 +88,7 @@ const TableTwoForTable = () => {
   return (
     <div className="">
         <div className='custom-scroll h-[320px] max-sm:w-[300px] overflow-y-scroll pr-3'>
-        <table className='border-separate border w-full '>
+        <table className='border-separate w-full '>
             <tbody className=''>
                 <tr className='w-full bg-[#797979] text-black'>
                     <td colSpan={2} className='text-[16px] font-[550] py-2 px-4'>Total Feedbacks</td>

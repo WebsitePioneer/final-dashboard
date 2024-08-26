@@ -16,7 +16,7 @@ const LineChartForLine = ({dark}) => {
       chart: {
         type: "line",
         background: 'transparent', // Gradient background
-        foreColor: `${dark ? "#ffffff" : "#000000"}`,
+        foreColor: `${dark ? "#ffffff" : "#ffffff"}`,
         toolbar: {
           show: true,
           tools: {
@@ -36,7 +36,7 @@ const LineChartForLine = ({dark}) => {
           fontSize: '10px',
           fontFamily: 'Helvetica, Arial, sans-serif',
           fontWeight: 'bold',
-          colors: ['#FEB019'], // Set data label color
+          colors: ['#3B4949'], // Set data label color
         },
         background: {
           enabled: true,
@@ -79,7 +79,7 @@ const LineChartForLine = ({dark}) => {
         offsetY: 0,
         style: {
           fontSize: "25px",
-          color: `${dark ? "#ffffff" : "#000000"}`,
+          color: `${dark ? "#ffffff" : "#ffffff"}`,
         },
       },
       fill: {

@@ -37,11 +37,11 @@ body{
  
 /* Handle */
 .custom-scroll::-webkit-scrollbar-thumb {
-  background: #1b3870; 
+  background: #11244a; 
   border-radius: 10px;
 }
 
 /* Handle on hover */
 .custom-scroll::-webkit-scrollbar-thumb:hover {
-  background: #C4BBAF; 
+  background: #11244a; 
 }

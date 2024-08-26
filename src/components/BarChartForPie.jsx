@@ -16,9 +16,9 @@ const BarChartForPie = ({dark}) => {
       chart: {
         type: "bar",
         background: 'transparent', // Gradient background
-        foreColor: `${dark ? "#ffffff" : "#000000"}`, // Color of text inside the chart (axis labels, data labels, etc.)
+        foreColor: `${dark ? "#ffffff" : "#ffffff"}`, // Color of text inside the chart (axis labels, data labels, etc.)
       },
-      colors: ['#845ec2', '#926c00', '#00c9a7', '#008b74', '#926c00'],
+      colors: ['#E97224', '#3B4A4A', '#DDB64F', '#616A1E', '#926c00'],
       plotOptions: {
         bar: {
           distributed: true,
@@ -31,14 +31,14 @@ const BarChartForPie = ({dark}) => {
       dataLabels: {
         enabled: true,
         style:{
-          color: `${dark ? "#ffffff" : "#000000"}`,
+          color: `${dark ? "#ffffff" : "#ffffff"}`,
         }
       },
       xaxis: {
         categories: labels,
         labels: {
           style: {
-            colors: `${dark ? "#ffffff" : "#000000"}`, // Color of x-axis labels
+            colors: `${dark ? "#ffffff" : "#ffffff"}`, // Color of x-axis labels
             fontSize: '14px',
           },
         },
@@ -46,7 +46,7 @@ const BarChartForPie = ({dark}) => {
       yaxis: {
         labels: {
           style: {
-            colors: `${dark ? "#ffffff" : "#000000"}`, // Color of y-axis labels
+            colors: `${dark ? "#ffffff" : "#ffffff"}`, // Color of y-axis labels
             fontSize: '13px',
           },
         },
@@ -58,7 +58,7 @@ const BarChartForPie = ({dark}) => {
         offsetY: 0,
         style: {
           fontSize: "25px",
-          color: `${dark ? "#ffffff" : "#000000"}`,
+          color: `${dark ? "#ffffff" : "#ffffff"}`,
         },
       },
     },

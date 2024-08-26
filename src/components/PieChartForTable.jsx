@@ -56,7 +56,7 @@ const PieChartForTable = ({dark}) => {
             chart: {
                 type: "donut",
                 background: 'transparent', // Background color of the entire chart
-                foreColor: '#ffffff', // Default color for all text in the chart (like axis labels)
+                foreColor: `${dark ? "#ffffff" : "#ffffff"}`, // Default color for all text in the chart (like axis labels)
               },
               dataLabels: {
                 enabled: true,
@@ -83,7 +83,7 @@ const PieChartForTable = ({dark}) => {
                 offsetY: 0,
                 style: {
                   fontSize: "24px",
-                  color: `${dark ? "#ffffff" : "#000000"}`,
+                  color: `${dark ? "#ffffff" : "#ffffff"}`,
                 },
               },
           labels: datesFilter,

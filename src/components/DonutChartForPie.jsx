@@ -15,12 +15,12 @@ const DonutChartForPie = ({dark}) => {
       chart: {
         type: "donut",
         background: 'transparent', // Background color of the entire chart
-        foreColor: '#ffffff', // Default color for all text in the chart (like axis labels)
+        foreColor: `${dark ? "#ffffff" : "#ffffff"}`, // Default color for all text in the chart (like axis labels)
       },
       dataLabels: {
         enabled: true,
         style:{
-          color: `${dark ? "#ffffff" : "#000000"}`,
+          color: `${dark ? "#ffffff" : "#ffffff"}`,
         }
       },
       plotOptions: {
@@ -32,7 +32,7 @@ const DonutChartForPie = ({dark}) => {
           offsetY: 0,
         },
         stroke: {
-          color: `${dark ? "#ffffff" : "#000000"}`,
+          color: `${dark ? "#ffffff" : "#ffffff"}`,
         },
       },
       title: {
@@ -42,13 +42,13 @@ const DonutChartForPie = ({dark}) => {
         offsetY: 0,
         style: {
           fontSize: "24px",
-          fontWeight: 'bold',
-          color: `${dark ? "#ffffff" : "#000000"}`,
+          fontWeight: '800',
+          color: `${dark ? "#ffffff" : "#ffffff"}`,
         },
       },
       labels: labels,
       style:{
-        color: `${dark ? "#ffffff" : "#000000"}`,
+        color: `${dark ? "#ffffff" : "#ffffff"}`,
       },
       legend: {
         position: "right",
