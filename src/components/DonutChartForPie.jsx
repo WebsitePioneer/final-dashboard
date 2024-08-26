@@ -61,12 +61,21 @@ const DonutChartForPie = ({ dark }) => {
 
   return (
     <div>
-      <div className="">
+      <div className="lg:block hidden">
         <Chart
           options={chartOptions.options}
           series={chartSeries}
           type="donut"
           height={300}
+        />
+      </div>
+
+      <div className="max-sm:lg:block hidden">
+        <Chart
+          options={chartOptions.options}
+          series={chartSeries}
+          type="donut"
+          height={400}
         />
       </div>
     </div>

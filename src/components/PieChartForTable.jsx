@@ -109,12 +109,20 @@ const PieChartForTable = ({ dark }) => {
 
   const chartSeries = tasksFiltered;
   return (
-    <Chart
-      options={chartOptions.options}
-      series={chartSeries}
-      type="pie"
-      height={300}
-    />
+    <>    <div className="lg:block hidden"><Chart
+    options={chartOptions.options}
+    series={chartSeries}
+    type="pie"
+    height={300}
+  /></div>
+    <div className="max-sm:lg:block hidden"><Chart
+    options={chartOptions.options}
+    series={chartSeries}
+    type="pie"
+    height={400}
+  /></div>
+  </>
+    
   );
 };
 
