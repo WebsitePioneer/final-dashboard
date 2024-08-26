@@ -24,7 +24,7 @@ const Dashboard = ({data}) => {
            })
      }, [])
   return (
-    <div data-aos="fade-up" className={`sm:w-11/12 w-full mx-auto bg-gradient-to-r ${data ? "from-[#161616] to-[#282828]" : "from-[#eae8e7] to-[#d6beaf]"} drop-shadow-xl scroll-smooth my-8 max-sm:my-6 px-6 py-6 rounded-[25px]`}>
+    <div data-aos="fade-up" className={`sm:w-11/12 w-full mx-auto bg-gradient-to-r ${data ? "from-[#161616] to-[#282828]" : "from-[#d1c8c8] to-[#dcb7a0]"} drop-shadow-xl scroll-smooth my-8 max-sm:my-6 px-6 py-6 rounded-[25px]`}>
       <div data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-11 gap-[15px]">
         
         {/* Pie Charts */}
