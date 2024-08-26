@@ -1,48 +1,35 @@
 import React from 'react'
 import Chart from "react-apexcharts";
+import {useTableChartData} from "../hooks/useTableChartData"
 
-const BarOneForTable = ({data}) => {
+const BarOneForTable = () => {
+  const { data, isLoading, error } = useTableChartData();
 
-        // Time Intervel in Dates
-        const dates = data.map((date,index) => {
-            return date.updated_at.humanized_date
-        })
-        const datesFilter = dates.filter((item, index) => dates.indexOf(item) === index);
-        console.log(datesFilter)
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
-        // ********************
-        // Number Task in Date one August 16, 2024
-        const dateone = dates.map(stat => {
-            if(stat === "August 16, 2024") return stat
-        })
-        // Filter out undefined values and sort the array
-        const dateonefiltered = dateone.filter(item => item !== undefined).sort().length;
+  const status = data.map((value,index) => {
+    return value.status.title
+  })
 
-        // Number Task in Date one August 19, 2024
-        const datetwo = dates.map(stat => {
-            if(stat === "August 19, 2024") return stat
-        })
-        // Filter out undefined values and sort the array
-        const datetwofiltered = datetwo.filter(item => item !== undefined).sort().length;
+// status sorted by removeing duplicates
+const statusfiltered = [...new Set(status)];
 
-        // Number Task in Date one August 20, 2024
-        const datethree = dates.map(stat => {
-            if(stat === "August 20, 2024") return stat
-        })
-        // Filter out undefined values and sort the array
-        const datethreefiltered = datethree.filter(item => item !== undefined).sort().length;
+const statusInReview = status.map(stat => {
+if(stat === "In Review") return stat
+})
 
-        // Number Task in Date one August 23, 2024
-        const datefour = dates.map(stat => {
-            if(stat === "August 23, 2024") return stat
-        })
-        // Filter out undefined values and sort the array
-        const datefourfiltered = datefour.filter(item => item !== undefined).sort().length;
+// Filter out undefined values and sort the array
+const filteredInReview = statusInReview.filter(item => item !== undefined).sort().length; // Sort the remaining values
 
-        // ********************
+const statusInProgress = status.map(stat => {
+if(stat === "In Progress") return stat
+})
 
-        const tasksFiltered = [datefourfiltered,datethreefiltered,datetwofiltered,dateonefiltered]
-        console.log(tasksFiltered)
+// Filter out undefined values and sort the array
+const filteredInProgress = statusInProgress.filter(item => item !== undefined).sort().length; // Sort the remaining values
+
+const statusValues = [filteredInProgress,filteredInReview]
 
     const chartOptions = {
         options: {
@@ -71,10 +58,10 @@ const BarOneForTable = ({data}) => {
                       },
                     },
           xaxis: {
-            categories: datesFilter,
+            categories: statusfiltered,
           },
           title: {
-            text: "Tasks Status in %",
+            text: "Feedbacks Status",
             align: "left",
             margin: 40,
             offsetY: 0,
@@ -87,7 +74,7 @@ const BarOneForTable = ({data}) => {
     
       const chartSeries = [
         {
-          data: tasksFiltered,
+          data: statusValues,
         },
       ];
   return (

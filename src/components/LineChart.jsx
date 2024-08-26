@@ -1,7 +1,12 @@
 import React from "react";
 import Chart from "react-apexcharts";
+import { useLineChartData } from "../hooks/useLineChartData";
 
-const LineChartForLine = ({data}) => {
+const LineChartForLine = () => {
+  const { data, isLoading, error } = useLineChartData();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   const dates = data.series;
   const tasks = data.datasets[0].data;
@@ -41,7 +46,7 @@ const LineChartForLine = ({data}) => {
         },
       },
       title: {
-        text: "Tasks Per Week",
+        text: "Posts Per Week",
         align: "left",
         margin: 40,
         offsetY: 0,

@@ -2,7 +2,7 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 
 const fetchPieBarChartData = async () => {
-  const response = await axios.get("/api//chart/pie",{
+  const response = await axios.get("/api/chart/pie",{
     headers:{
       "Content-Type": "application/json",
     }

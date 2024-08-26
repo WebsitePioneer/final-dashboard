@@ -3,7 +3,7 @@ import fos from "./assets/fos.png"
 
 function App() {
   return (
-    <div className="bg-white/50h-[100vh] scroll-smooth px-4">
+    <div className="bg-white/50h-[100vh] scroll-smooth px-4 max-sm:px-5">
       <div className="flex items-center justify-between px-6 max-lg:py-[10px] ">
         <img className="max-lg:w-[30%] max-lg:ml-[-3%] max-sm:w-[50%] max-sm:ml-[-5%]" src={fos} />
         <button>Dark mode</button>

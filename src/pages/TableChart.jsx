@@ -26,9 +26,9 @@ const TableChart = () => {
         <TableTwoForTable  data={data}/>
       </div>
 
-      {/* <div className="bg-white border rounded-[15px] px-3 py-3 ">
+      <div className="bg-white border rounded-[15px] px-3 py-3 ">
         <BarOneForTable data={data} />
-      </div> */}
+      </div>
     </div>
   </>
   )

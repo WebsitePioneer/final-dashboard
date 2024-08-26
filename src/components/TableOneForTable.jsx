@@ -1,6 +1,11 @@
 import React from 'react'
+import {useTableChartData} from "../hooks/useTableChartData"
 
-const TableOneForTable = ({data}) => {
+const TableOneForTable = () => {
+    const { data, isLoading, error } = useTableChartData();
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
 
     const totalVotes = data.map((votes,index)=>{
         return votes.votes_count_number;

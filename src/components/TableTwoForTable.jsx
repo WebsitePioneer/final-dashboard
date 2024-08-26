@@ -1,6 +1,11 @@
 import React from 'react'
+import {useTableChartData} from "../hooks/useTableChartData"
 
-const TableTwoForTable = ({data}) => {
+const TableTwoForTable = () => {
+    const { data, isLoading, error } = useTableChartData();
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
 
     // Total Number of Upvotes
     const totalVotes = data.map((votes,index)=>{
@@ -56,6 +61,30 @@ const TableTwoForTable = ({data}) => {
     // ----------------****----------
 
 
+    const status = data.map((value,index) => {
+        return value.status.title
+      })
+    
+    // status sorted by removeing duplicates
+    const statusfiltered = [...new Set(status)];
+    
+    const statusInReview = status.map(stat => {
+    if(stat === "In Review") return stat
+    })
+    
+    // Filter out undefined values and sort the array
+    const filteredInReview = statusInReview.filter(item => item !== undefined).sort().length; // Sort the remaining values
+    
+    const statusInProgress = status.map(stat => {
+    if(stat === "In Progress") return stat
+    })
+    
+    // Filter out undefined values and sort the array
+    const filteredInProgress = statusInProgress.filter(item => item !== undefined).sort().length; // Sort the remaining values
+    
+    const statusValues = [filteredInProgress,filteredInReview]
+
+
   return (
     <div className="">
         <div className='custom-scroll h-[320px] max-sm:w-[300px] overflow-y-scroll pr-3'>
@@ -79,6 +108,20 @@ const TableTwoForTable = ({data}) => {
                 <tr className='bg-[#af273b] text-white'>
                     <td colSpan={2} className='text-[16px] font-[500] py-2 px-4'>Total Up-Votes</td>
                     <td className=' text-[16px] font-[500] px-4'>{sum}</td>
+                </tr>  
+                
+                <tr>
+                    <td colSpan={3} className='bg-[#db3750] text-white text-center text-[18px] font-[600] p-2 px-4 '>feedback Status</td>
+                </tr> 
+
+                <tr className='bg-[#af273b] text-white'>
+                <td colSpan={2} className='text-[16px] font-[500] py-2 px-4'>In Progress</td>
+                <td className='text-[16px] font-[500] px-4'>{filteredInProgress}</td>
+                </tr>
+
+                <tr className='bg-[#af273b] text-white'>
+                    <td colSpan={2} className='text-[16px] font-[500] py-2 px-4'>In Review</td>
+                    <td className='text-[16px] font-[500] px-4'>{filteredInReview}</td>
                 </tr>  
 
                 <tr>

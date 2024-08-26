@@ -1,7 +1,11 @@
 import React from 'react'
 import Chart from "react-apexcharts";
+import { usePieBarChartData } from "../hooks/usePieBarChartData";
 
-const DonutChartForPie = ({data}) => {  
+const DonutChartForPie = () => {  
+  const { data, isLoading, pieerror } = usePieBarChartData();
+  if (isLoading) return <div>Loading...</div>;
+  if (pieerror) return <div>Error: {error.message}</div>;
 
   const labels = data.labels;
   const value = data.data;

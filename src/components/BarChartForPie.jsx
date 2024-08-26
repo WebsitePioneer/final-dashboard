@@ -1,7 +1,12 @@
 import React from 'react'
 import Chart from "react-apexcharts";
+import { usePieBarChartData } from "../hooks/usePieBarChartData";
 
-const BarChartForPie = ({data}) => {
+const BarChartForPie = () => {
+    // Pie chart
+    const { data, isLoading, pieerror } = usePieBarChartData();
+    if (isLoading) return <div>Loading...</div>;
+    if (pieerror) return <div>Error: {error.message}</div>;
 
   const labels = data.labels;
   const value = data.data;
@@ -9,51 +14,6 @@ const BarChartForPie = ({data}) => {
   const pervalue = value.map(val => {
     return ((val / sum) * 100).toFixed(2);
   })
-  //   options: {
-  //     chart: {
-  //       type: "bar",
-  //       height: 300,
-  //     },
-  //     plotOptions: {
-  //       bar: {
-  //         borderRadius: 4,
-  //         borderRadiusApplication: "end",
-  //         horizontal: false,
-  //       },
-  //     },
-  //     dataLabels: {
-  //       enabled: false,
-  //     },
-  //     theme: {
-  //       mode: 'light', 
-  //       palette: 'palette3', 
-  //       monochrome: {
-  //           enabled: true,
-  //           color: '#FEB019',
-  //           shadeTo: 'light',
-  //           shadeIntensity: 0.65
-  //       },
-  //     },
-  //     xaxis: {
-  //       categories: labels,
-  //     },
-  //     title: {
-  //       text: "Tasks Status in %",
-  //       align: "left",
-  //       margin: 40,
-  //       offsetY: 0,
-  //       style: {
-  //         fontSize: "25px",
-  //       },
-  //     },
-  //   },
-  // };
-
-  // const chartSeries = [
-  //   {
-  //     data: pervalue,
-  //   },
-  // ];
 
   const chartOptions = {
     options: {
