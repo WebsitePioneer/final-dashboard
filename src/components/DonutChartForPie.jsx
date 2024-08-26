@@ -38,7 +38,7 @@ const DonutChartForPie = ({ dark }) => {
       title: {
         text: "Tasks Status in %",
         align: "left",
-        margin: 40,
+        margin: 20,
         offsetY: 0,
         style: {
           fontSize: "24px",
@@ -52,7 +52,7 @@ const DonutChartForPie = ({ dark }) => {
       },
       legend: {
         position: "right",
-        offsetY: 70,
+        offsetY: 30,
       },
     },
   };

@@ -63,7 +63,7 @@ const BarChartForPie = ({ dark }) => {
       title: {
         text: "Tasks Status",
         align: "left",
-        margin: 40,
+        margin: 20,
         offsetY: 0,
         style: {
           fontSize: "25px",

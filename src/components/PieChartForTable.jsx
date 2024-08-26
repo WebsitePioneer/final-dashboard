@@ -83,7 +83,7 @@ const PieChartForTable = ({ dark }) => {
           donut: {
             size: "60%",
           },
-          offsetY: 10,
+          offsetY: 20,
         },
         stroke: {
           colors: undefined,
@@ -92,7 +92,7 @@ const PieChartForTable = ({ dark }) => {
       title: {
         text: "Feedbacks By Date",
         align: "left",
-        margin: 40,
+        margin: 20,
         offsetY: 0,
         style: {
           fontSize: "24px",
@@ -102,7 +102,7 @@ const PieChartForTable = ({ dark }) => {
       labels: datesFilter,
       legend: {
         position: "right",
-        offsetY: 70,
+        offsetY: 30,
       },
     },
   };
