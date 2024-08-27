@@ -30,6 +30,9 @@ const LineChartForLine = ({ dark }) => {
           },
         },
       },
+      theme: {
+        mode: 'dark', // Sets the toolbar theme to dark (affects toolbar color)
+      },
       dataLabels: {
         enabled: true,
         style: {

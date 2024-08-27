@@ -15,6 +15,9 @@ const BarChartForLine = ({ dark }) => {
         background: "transparent", // Gradient background
         foreColor: `${dark ? "#ffffff" : "#ffffff"}`,
       },
+      theme: {
+        mode: 'dark', // Sets the toolbar theme to dark (affects toolbar color)
+      },
       colors: ["#845ec2", "#926c00", "#845ec2", "#EDDD3F", "#926c00"],
       plotOptions: {
         bar: {

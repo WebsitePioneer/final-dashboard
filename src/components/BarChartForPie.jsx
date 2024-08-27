@@ -18,6 +18,12 @@ const BarChartForPie = ({ dark }) => {
         background: "transparent", // Gradient background
         foreColor: `${dark ? "#ffffff" : "#ffffff"}`, // Color of text inside the chart (axis labels, data labels, etc.)
       },
+      fill: {
+        opacity: 1, // Adjust the opacity here (0.0 to 1.0)
+      },
+      theme: {
+        mode: 'dark', // Sets the toolbar theme to dark (affects toolbar color)
+      },
       tooltip: {
         theme: 'dark', // Controls the overall theme of the tooltip
         style: {
@@ -27,9 +33,12 @@ const BarChartForPie = ({ dark }) => {
           colors: "#000000",
         },
       },
-      colors: ["#E97224", "#9A6F2A", "#DDB64F", "#616A1E", "#926c00"],
+      colors: ["#efefef", "#9A6F2A", "#DDB64F", "#616A1E", "#926c00"],
       plotOptions: {
         bar: {
+          dataLabels: {
+            position: 'center', // Adjust label position: 'top', 'center', or 'bottom'
+          },
           distributed: false,
           borderRadius: 4,
           borderRadiusApplication: "end",
@@ -40,14 +49,16 @@ const BarChartForPie = ({ dark }) => {
       dataLabels: {
         enabled: true,
         style: {
-          color: `${dark ? "#ffffff" : "#ffffff"}`,
+          colors: ['#2c2b2b'],
+          fontSize: '14px', // Set the font size
+          fontWeight: 'bold', // Set font weight
         },
       },
       xaxis: {
         categories: labels,
         labels: {
           style: {
-            colors: `${dark ? "#ffffff" : "#ffffff"}`, // Color of x-axis labels
+            colors: `${dark ? "#000000" : "#ffffff"}`, // Color of x-axis labels
             fontSize: "14px",
           },
         },

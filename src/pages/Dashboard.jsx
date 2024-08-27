@@ -26,7 +26,7 @@ const Dashboard = ({ data }) => {
     <div
       data-aos="fade-up"
       className={`sm:w-11/12 w-full mx-auto bg-gradient-to-r ${
-        data ? "from-[#161616] to-[#282828]" : "from-[#d1c8c8] to-[#dcb7a0]"
+        data ? "from-[#161616] to-[#282828]" : "from-[#fbdada] to-[#f2c9b3]"
       } drop-shadow-xl scroll-smooth my-8 max-sm:my-6 px-6 max-sm:px-3 py-6 rounded-[25px]`}
     >
       <div
@@ -102,7 +102,7 @@ const Dashboard = ({ data }) => {
           data-aos="fade-up"
           className={`lg:col-span-3 bg-gradient-to-r ${
             data ? "from-[#4b4444] to-[#353548]" : "from-[#4b4444] to-[#353548]"
-          } rounded-[15px] px-3 py-3 `}
+          } rounded-[15px] px-3 py-4 `}
         >
           <TableTwoForTable />
         </div>
