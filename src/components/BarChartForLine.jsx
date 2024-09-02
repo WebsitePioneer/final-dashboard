@@ -1,6 +1,5 @@
 import React from "react";
 import Chart from "react-apexcharts";
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 const BarChartForLine = ({ dark }) => {
